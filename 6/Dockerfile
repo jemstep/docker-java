@@ -1,5 +1,5 @@
 FROM ubuntu:trusty
-MAINTAINER Feng Honglin <hfeng@tutum.co>
+MAINTAINER ClouDesire <dev@cloudesire.com>
 
 # Install Oracle Java 6
 ENV JAVA_VER 6
