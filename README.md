@@ -1,13 +1,11 @@
-docker-image-java
+docker-java
 =================
-Base image installed with Oracle Java
+Docker image based on Ubuntu Trusty with Oracle Java6 / Java7 / Java8 from webupd8team launchpad repository.
 
 ```
-tifayuki/java:latest       Oracle Java 8
+cloudesire/java:8        Oracle Java 8
 
-tifayuki/java:8        Oracle Java 8
+cloudesire/java:7        Oracle Java 7
 
-tifayuki/java:7        Oracle Java 7
-
-tifayuki/java:6        Oracle Java 6
+cloudesire/java:6        Oracle Java 6
 ```
