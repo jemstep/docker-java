@@ -3,7 +3,7 @@ docker-java
 
 [![Circle CI](https://circleci.com/gh/ClouDesire/docker-java.svg?style=svg)](https://circleci.com/gh/ClouDesire/docker-java)
 
-Docker image based on Ubuntu Trusty with Oracle Java6 / Java7 / Java8 from webupd8team launchpad repository with unlimited jce policy.
+Docker image based on ubuntu:trusty with Oracle JDK installed via [webupd8team PPA](https://launchpad.net/~webupd8team/+archive/ubuntu/java) and $JAVA_HOME set system-wide.
 
 ```
 cloudesire/java:8        Oracle Java 8
