@@ -13,5 +13,9 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /
     apt-get install -y --force-yes --no-install-recommends oracle-java${JAVA_VER}-installer oracle-java${JAVA_VER}-set-default oracle-java${JAVA_VER}-unlimited-jce-policy && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists && \
-    rm -rf /var/cache/oracle-jdk${JAVA_VER}-installer
-
+    rm -rf /var/cache/oracle-jdk${JAVA_VER}-installer && \
+    rm -rf ${JAVA_HOME}/ct.sym && \
+    rm -rf ${JAVA_HOME}/src.zip && \
+    rm -rf ${JAVA_HOME}/javafx-src.zip && \
+    rm -rf ${JAVA_HOME}/lib/visualvm && \
+    rm -rf ${JAVA_HOME}/lib/missioncontrol
