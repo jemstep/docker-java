@@ -1,11 +1,11 @@
-FROM ubuntu:xenial
+FROM ubuntu:trusty
 
 # Install Oracle Java 8
 ENV JAVA_VER 8
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
-RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' >> /etc/apt/sources.list && \
-    echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' >> /etc/apt/sources.list && \
+RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list && \
+    echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886 && \
     apt-get update && \
     apt-get install -y --force-yes --no-install-recommends software-properties-common sudo openssh-client gnupg2 curl && \
