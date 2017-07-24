@@ -1,6 +1,8 @@
 FROM ubuntu:trusty
 MAINTAINER Jemstep Dev <dev@jemstep.com>
 
+ENV TERM xterm-color
+
 # Install Oracle Java 8
 ENV JAVA_VER 8
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
