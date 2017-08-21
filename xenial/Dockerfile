@@ -12,7 +12,7 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     echo 'deb http://dl.bintray.com/sbt/debian /' > /etc/apt/sources.list.d/sbt-bintray.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886 99E82A75642AC823 && \
     apt-get update && \
-    apt-get install -y --force-yes --no-install-recommends software-properties-common sudo openssh-client gnupg2 gnupg-curl hopenpgp-tools file bash-completion psmisc wget curl ca-certificates lsof vim nodejs phantomjs && \
+    apt-get install -y --force-yes --no-install-recommends software-properties-common sudo openssh-client gnupg2 gnupg-curl hopenpgp-tools file bash-completion psmisc wget curl ca-certificates lsof vim nodejs phantomjs ruby2.3 ruby-bundler && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
     echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
