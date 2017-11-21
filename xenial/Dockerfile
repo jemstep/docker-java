@@ -17,6 +17,10 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     apt-get update && \
     echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
     apt-get install -y --force-yes --no-install-recommends oracle-java${JAVA_VER}-installer oracle-java${JAVA_VER}-set-default oracle-java${JAVA_VER}-unlimited-jce-policy sbt git && \
+    apt-get install -y --force-yes bc && \
+    apt-get install -y --force-yes emacs && \
+    apt-get install -y --force-yes firefox=45.0.2+build1-0ubuntu1 && \
+    apt-mark hold firefox && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists && \
     rm -rf /var/cache/oracle-jdk${JAVA_VER}-installer && \
