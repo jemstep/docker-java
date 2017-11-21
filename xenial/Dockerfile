@@ -12,11 +12,14 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     echo 'deb http://dl.bintray.com/sbt/debian /' > /etc/apt/sources.list.d/sbt-bintray.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886 99E82A75642AC823 && \
     apt-get update && \
-    apt-get install -y --force-yes --no-install-recommends software-properties-common sudo openssh-client gnupg2 gnupg-curl hopenpgp-tools file bash-completion iputils-ping bind9-host traceroute netcat tcpdump strace psmisc wget curl ca-certificates lsof vim nodejs phantomjs ruby2.3 ruby-bundler && \
+    apt-get install -y --force-yes --no-install-recommends software-properties-common sudo openssh-client \
+     gnupg2 gnupg-curl hopenpgp-tools file bash-completion iputils-ping bind9-host traceroute netcat tcpdump \
+      strace psmisc wget curl ca-certificates lsof vim nodejs phantomjs bc emacs ruby2.3 ruby-bundler firefox=45.0.2+build1-0ubuntu1 && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
     echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
     apt-get install -y --force-yes --no-install-recommends oracle-java${JAVA_VER}-installer oracle-java${JAVA_VER}-set-default oracle-java${JAVA_VER}-unlimited-jce-policy sbt git && \
+    apt-mark hold firefox && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists && \
     rm -rf /var/cache/oracle-jdk${JAVA_VER}-installer && \
