@@ -14,7 +14,13 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     apt-get update && \
     apt-get install -y --force-yes --no-install-recommends software-properties-common sudo openssh-client \
      gnupg2 gnupg-curl hopenpgp-tools file bash-completion iputils-ping bind9-host traceroute netcat tcpdump \
-      strace psmisc wget curl bzip2 ca-certificates lsof vim nodejs bc emacs ruby2.3 ruby-bundler firefox=45.0.2+build1-0ubuntu1 && \
+      strace psmisc wget curl bzip2 ca-certificates lsof vim bc emacs ruby2.3 ruby-bundler firefox=45.0.2+build1-0ubuntu1 && \
+    curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add - && \
+    echo 'deb https://deb.nodesource.com/node_8.x xenial main' > /etc/apt/sources.list.d/nodesource.list && \
+    echo 'deb-src https://deb.nodesource.com/node_8.x xenial main' >> /etc/apt/sources.list.d/nodesource.list && \
+    apt-get update && \
+    apt-get install nodejs -y --force-yes && \
+    npm install npm -g && \
     wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
     echo 86dd9a4bf4aee45f1a84c9f61cf1947c1d6dce9b9e8d2a907105da7852460d2f  phantomjs-2.1.1-linux-x86_64.tar.bz2 > phantomjs-2.1.1-linux-x86_64.tar.bz2.sha256 && \
     sha256sum --check phantomjs-2.1.1-linux-x86_64.tar.bz2.sha256 && \
