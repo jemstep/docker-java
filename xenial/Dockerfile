@@ -12,7 +12,7 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     echo 'deb http://dl.bintray.com/sbt/debian /' > /etc/apt/sources.list.d/sbt-bintray.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886 99E82A75642AC823 && \
     apt-get update && \
-    apt-get install -y --force-yes --no-install-recommends software-properties-common sudo openssh-client \
+    apt-get install -y --force-yes --no-install-recommends software-properties-common sudo openssh-client apt-transport-https \
      gnupg2 gnupg-curl hopenpgp-tools file bash-completion iputils-ping bind9-host traceroute netcat tcpdump \
       strace psmisc wget curl bzip2 ca-certificates lsof vim bc emacs ruby2.3 ruby-bundler firefox=45.0.2+build1-0ubuntu1 && \
     curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add - && \
