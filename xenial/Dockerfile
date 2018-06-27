@@ -14,7 +14,7 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     apt-get update && \
     apt-get install -y --allow-change-held-packages --no-install-recommends software-properties-common sudo openssh-client apt-transport-https \
      gnupg2 gnupg-curl hopenpgp-tools file bash-completion iputils-ping bind9-host traceroute netcat tcpdump \
-      strace psmisc wget curl bzip2 ca-certificates lsof vim bc emacs ruby2.3 ruby-bundler firefox=60.0.2+build1-0ubuntu0.16.04.1 \
+      strace psmisc wget curl bzip2 ca-certificates lsof vim bc emacs ruby2.3 ruby-bundler \
       dbus dbus-x11 && \
     curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add - && \
     echo 'deb https://deb.nodesource.com/node_8.x xenial main' > /etc/apt/sources.list.d/nodesource.list && \
@@ -38,11 +38,11 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     tar -xf geckodriver-v0.20.1-linux64.tar.gz -C /opt/geckodriver/ && \
     sudo ln -s /opt/geckodriver/geckodriver /usr/bin/geckodriver && \
     rm geckodriver-v0.20.1-linux64.tar.gz gecko.sha256 && \
-    wget https://ftp.mozilla.org/pub/firefox/releases/59.0.2/linux-x86_64/en-US/firefox-59.0.2.tar.bz2 && \
+    wget https://ftp.mozilla.org/pub/firefox/releases/57.0.4/linux-x86_64/en-US/firefox-57.0.4.tar.bz2 && \
     mkdir /opt/firefox && \
-    tar -xjf firefox-59.0.2.tar.bz2 -C /opt/firefox/ && \
-    sudo ln -s /opt/firefox/firefox /usr/bin/firefox-59 && \
-    rm firefox-59.0.2.tar.bz2 && \
+    tar -xjf firefox-57.0.4.tar.bz2 -C /opt/firefox/ && \
+    sudo ln -s /opt/firefox/firefox/firefox /usr/bin/firefox && \
+    rm firefox-57.0.4.tar.bz2 && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
     echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
