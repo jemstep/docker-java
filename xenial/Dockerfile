@@ -38,11 +38,11 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     tar -xf geckodriver-v0.20.1-linux64.tar.gz -C /opt/geckodriver/ && \
     sudo ln -s /opt/geckodriver/geckodriver /usr/bin/geckodriver && \
     rm geckodriver-v0.20.1-linux64.tar.gz gecko.sha256 && \
-    wget https://ftp.mozilla.org/pub/firefox/releases/57.0.4/linux-x86_64/en-US/firefox-57.0.4.tar.bz2 && \
+    wget https://ftp.mozilla.org/pub/firefox/releases/60.0.1/linux-x86_64/en-US/firefox-60.0.1.tar.bz2 && \
     mkdir /opt/firefox && \
-    tar -xjf firefox-57.0.4.tar.bz2 -C /opt/firefox/ && \
+    tar -xjf firefox-60.0.1.tar.bz2 -C /opt/firefox/ && \
     sudo ln -s /opt/firefox/firefox/firefox /usr/bin/firefox && \
-    rm firefox-57.0.4.tar.bz2 && \
+    rm firefox-60.0.1.tar.bz2 && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
     echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
