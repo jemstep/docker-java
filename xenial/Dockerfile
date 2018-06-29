@@ -42,7 +42,7 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     wget https://ftp.mozilla.org/pub/firefox/releases/60.0.1/linux-x86_64/en-US/firefox-60.0.1.tar.bz2 && \
     mkdir /opt/firefox && \
     tar -xjf firefox-60.0.1.tar.bz2 -C /opt/firefox/ && \
-    sudo ln -s /opt/firefox/firefox/firefox /usr/bin/firefox && \
+    sudo ln -s /opt/firefox/firefox/firefox /usr/bin/firefox60 && \
     rm firefox-60.0.1.tar.bz2 && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
