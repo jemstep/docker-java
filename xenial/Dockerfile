@@ -16,7 +16,6 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
      gnupg2 gnupg-curl hopenpgp-tools dirmngr file bash-completion iputils-ping bind9-host traceroute netcat tcpdump \
       strace psmisc wget curl bzip2 ca-certificates lsof vim bc emacs ruby2.3 ruby-bundler \
       dbus dbus-x11 ruby-dev build-essential && \
-    curl -L https://github.com/scalacenter/bloop/releases/download/v1.0.0/install.py | python && \
     curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add - && \
     echo 'deb https://deb.nodesource.com/node_8.x xenial main' > /etc/apt/sources.list.d/nodesource.list && \
     echo 'deb-src https://deb.nodesource.com/node_8.x xenial main' >> /etc/apt/sources.list.d/nodesource.list && \
@@ -45,6 +44,9 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     tar -xjf firefox-60.0.1.tar.bz2 -C /opt/firefox/ && \
     sudo ln -s /opt/firefox/firefox/firefox /usr/bin/firefox60 && \
     rm firefox-60.0.1.tar.bz2 && \
+    wget https://github.com/scalacenter/bloop/releases/download/v1.0.0/install.py && \
+    mkdir /opt/bloop && \
+    /usr/bin/python install.py -d /opt/bloop && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
     echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
