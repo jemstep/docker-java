@@ -47,6 +47,8 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     wget https://github.com/scalacenter/bloop/releases/download/v1.0.0/install.py && \
     mkdir /opt/bloop && \
     /usr/bin/python install.py -d /opt/bloop && \
+    sudo ln -s /opt/bloop/bloop /usr/bin/bloop && \
+    rm install.py && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
     echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
