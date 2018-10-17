@@ -48,7 +48,7 @@ RUN echo 'deb http://dl.bintray.com/sbt/debian /' > /etc/apt/sources.list.d/sbt-
     apt-get update && \
     # echo "oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true" | sudo /usr/bin/debconf-set-selections && \
     # apt-get install -y --allow-change-held-packages --no-install-recommends oracle-java${JAVA_VER}-installer oracle-java${JAVA_VER}-set-default oracle-java${JAVA_VER}-unlimited-jce-policy && \
-    apt-get install sbt git openjdk-8-jdk -Y && \
+    apt-get install -y --allow-change-held-packages --no-install-recommends openjdk-8-jdk sbt git && \
     apt-mark hold firefox && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists && \
