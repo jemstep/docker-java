@@ -7,9 +7,9 @@ ENV TERM xterm-color
 ENV JAVA_VER 8
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
-RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /etc/apt/sources.list.d/webupd8team-ubuntu-java.list && \
-    echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /etc/apt/sources.list.d/webupd8team-ubuntu-java-src.list && \
-    echo 'deb http://dl.bintray.com/sbt/debian /' > /etc/apt/sources.list.d/sbt-bintray.list && \
+# RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /etc/apt/sources.list.d/webupd8team-ubuntu-java.list && \
+#     echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /etc/apt/sources.list.d/webupd8team-ubuntu-java-src.list && \
+RUN echo 'deb http://dl.bintray.com/sbt/debian /' > /etc/apt/sources.list.d/sbt-bintray.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886 99E82A75642AC823 && \
     apt-get update && \
     apt-get install -y --allow-change-held-packages --no-install-recommends software-properties-common sudo openssh-client apt-transport-https \
@@ -46,17 +46,12 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     rm firefox-60.0.1.tar.bz2 && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
-    echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
-    apt-get install -y --allow-change-held-packages --no-install-recommends oracle-java${JAVA_VER}-installer oracle-java${JAVA_VER}-set-default oracle-java${JAVA_VER}-unlimited-jce-policy sbt git && \
+    # echo "oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true" | sudo /usr/bin/debconf-set-selections && \
+    # apt-get install -y --allow-change-held-packages --no-install-recommends oracle-java${JAVA_VER}-installer oracle-java${JAVA_VER}-set-default oracle-java${JAVA_VER}-unlimited-jce-policy && \
+    apt-get install sbt git openjdk-8-jdk -Y && \
     apt-mark hold firefox && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists && \
-    rm -rf /var/cache/oracle-jdk${JAVA_VER}-installer && \
-    rm -rf ${JAVA_HOME}/ct.sym && \
-    rm -rf ${JAVA_HOME}/src.zip && \
-    rm -rf ${JAVA_HOME}/javafx-src.zip && \
-    rm -rf ${JAVA_HOME}/lib/visualvm && \
-    rm -rf ${JAVA_HOME}/lib/missioncontrol && \
     wget https://github.com/scalacenter/bloop/releases/download/v1.0.0/install.py --no-check-certificate && \
     echo 7c9cf1a838f2a8164b08dafd3c7b5e96f849f4ada3e9293a4d4f204776891bf2 install.py > bloop.sha256 && \
     sha256sum --check bloop.sha256 && \
