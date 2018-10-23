@@ -44,11 +44,17 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     tar -xjf firefox-60.0.1.tar.bz2 -C /opt/firefox/ && \
     sudo ln -s /opt/firefox/firefox/firefox /usr/bin/firefox && \
     rm firefox-60.0.1.tar.bz2 && \
+    wget https://ftp.mozilla.org/pub/thunderbird/releases/52.9.0/linux-x86_64/en-US/thunderbird-52.9.0.tar.bz2 && \
+    mkdir /opt/thunderbird && \
+    tar -xjf thunderbird-52.9.0.tar.bz2 -C /opt/thunderbird/ && \
+    sudo ln -s /opt/thunderbird/thunderbird/thunderbird /usr/bin/thunderbird && \
+    rm thunderbird-52.9.0.tar.bz2 && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
     echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
     apt-get install -y --allow-change-held-packages --no-install-recommends oracle-java${JAVA_VER}-installer oracle-java${JAVA_VER}-set-default oracle-java${JAVA_VER}-unlimited-jce-policy sbt git && \
     apt-mark hold firefox && \
+    apt-mark hold thunderbird && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists && \
     rm -rf /var/lib/apt/lists && \
