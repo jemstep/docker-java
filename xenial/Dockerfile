@@ -14,7 +14,7 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     apt-get install -y --allow-change-held-packages --no-install-recommends software-properties-common sudo openssh-client apt-transport-https \
      gnupg2 gnupg-curl hopenpgp-tools dirmngr file bash-completion iputils-ping bind9-host traceroute netcat tcpdump \
       strace psmisc wget curl bzip2 ca-certificates lsof vim bc emacs ruby2.3 ruby-bundler \
-      dbus dbus-x11 ruby-dev build-essential locales && \
+      dbus dbus-x11 ruby-dev build-essential locales less && \
     curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add - && \
     echo 'deb https://deb.nodesource.com/node_8.x xenial main' > /etc/apt/sources.list.d/nodesource.list && \
     echo 'deb-src https://deb.nodesource.com/node_8.x xenial main' >> /etc/apt/sources.list.d/nodesource.list && \
