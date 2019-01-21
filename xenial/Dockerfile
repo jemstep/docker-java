@@ -47,7 +47,8 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     echo 4a2c37fad16ac4cbdd6d9e460118bd2e5c3288f0119c032493903b4b5ad987da dart-sass-1.16.0-linux-x64.tar.gz > dart-sass-1.16.0-linux-x64.tar.gz.sha256 && \
     sha256sum --check dart-sass-1.16.0-linux-x64.tar.gz.sha256 && \
     mkdir /opt/dart-sass && \
-    tar -xf dart-sass-1.16.0-linux-x64.tar.gz -C /opt/dart-sass/ && \
+    tar -xf dart-sass-1.16.0-linux-x64.tar.gz --strip-components=1 -C /opt/dart-sass/ && \
+    mv /opt/dart-sass/dart-sass/* /opt/dart-sass/ && \
     sudo ln -s /opt/dart-sass/sass /usr/bin/dart-sass && \
     rm dart-sass-1.16.0-linux-x64.tar.gz dart-sass-1.16.0-linux-x64.tar.gz.sha256 && \
     apt-add-repository -y ppa:git-core/ppa && \
