@@ -2,7 +2,6 @@ FROM ubuntu:xenial
 MAINTAINER Jemstep Dev <dev@jemstep.com>
 
 ENV TERM xterm-color
-
 ENV JAVA_VER 8
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
