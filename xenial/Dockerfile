@@ -2,7 +2,6 @@ FROM ubuntu:xenial
 MAINTAINER Jemstep Dev <dev@jemstep.com>
 
 ENV TERM xterm-color
-
 ENV JAVA_VER 8
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
@@ -49,6 +48,8 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     mkdir /opt/dart-sass && \
     tar -xf dart-sass-1.16.0-linux-x64.tar.gz --strip-components=1 -C /opt/dart-sass/ && \
     sudo ln -s /opt/dart-sass/sass /usr/bin/dart-sass && \
+    sudo ln -s /opt/dart-sass/sass /usr/bin/sass && \
+    sudo rm /usr/local/bin/sass && \ # FIXME: Something else is installing the wrong sass at this location...
     rm dart-sass-1.16.0-linux-x64.tar.gz dart-sass-1.16.0-linux-x64.tar.gz.sha256 && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
