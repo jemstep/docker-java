@@ -49,7 +49,7 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     tar -xf dart-sass-1.16.0-linux-x64.tar.gz --strip-components=1 -C /opt/dart-sass/ && \
     sudo ln -s /opt/dart-sass/sass /usr/bin/dart-sass && \
     sudo ln -s /opt/dart-sass/sass /usr/bin/sass && \
-    sudo rm /usr/local/bin/sass && \ # FIXME: Something else is installing the wrong sass at this location...
+    sudo rm /usr/local/bin/sass && \
     rm dart-sass-1.16.0-linux-x64.tar.gz dart-sass-1.16.0-linux-x64.tar.gz.sha256 && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
