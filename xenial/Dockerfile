@@ -22,7 +22,6 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     npm install npm -g && \
     npm install mustache -g && \
     npm install kongfig -g && \
-    gem install compass && \
     wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
     echo 86dd9a4bf4aee45f1a84c9f61cf1947c1d6dce9b9e8d2a907105da7852460d2f  phantomjs-2.1.1-linux-x86_64.tar.bz2 > phantomjs-2.1.1-linux-x86_64.tar.bz2.sha256 && \
     sha256sum --check phantomjs-2.1.1-linux-x86_64.tar.bz2.sha256 && \
@@ -49,7 +48,6 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     tar -xf dart-sass-1.16.0-linux-x64.tar.gz --strip-components=1 -C /opt/dart-sass/ && \
     sudo ln -s /opt/dart-sass/sass /usr/bin/dart-sass && \
     sudo ln -s /opt/dart-sass/sass /usr/bin/sass && \
-    sudo rm /usr/local/bin/sass && \
     rm dart-sass-1.16.0-linux-x64.tar.gz dart-sass-1.16.0-linux-x64.tar.gz.sha256 && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
