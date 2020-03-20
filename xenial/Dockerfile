@@ -29,18 +29,20 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     tar -xf phantomjs-2.1.1-linux-x86_64.tar.bz2 -C /opt/phantomjs/ && \
     sudo ln -s /opt/phantomjs/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs && \
     rm phantomjs-2.1.1-linux-x86_64.tar.bz2 phantomjs-2.1.1-linux-x86_64.tar.bz2.sha256 && \
-    wget https://github.com/mozilla/geckodriver/releases/download/v0.20.1/geckodriver-v0.20.1-linux64.tar.gz && \
-    echo b2388c4b6f0dbbdb38834912a3ffe2b11aa3c2c652a7d8d82a143ed792867328  geckodriver-v0.20.1-linux64.tar.gz > gecko.sha256 && \
+    wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz && \
+    echo 9aa273e59358e4c40f34d74bb771726a110fd8c81eb628b3305c22f1146dfe75 geckodriver-v0.24.0-linux64.tar.gz > gecko.sha256 && \
     sha256sum --check gecko.sha256 && \
     mkdir /opt/geckodriver && \
-    tar -xf geckodriver-v0.20.1-linux64.tar.gz -C /opt/geckodriver/ && \
+    tar -xf geckodriver-v0.24.0-linux64.tar.gz -C /opt/geckodriver/ && \
     sudo ln -s /opt/geckodriver/geckodriver /usr/bin/geckodriver && \
-    rm geckodriver-v0.20.1-linux64.tar.gz gecko.sha256 && \
-    wget https://ftp.mozilla.org/pub/firefox/releases/60.0.1/linux-x86_64/en-US/firefox-60.0.1.tar.bz2 && \
+    rm geckodriver-v0.24.0-linux64.tar.gz gecko.sha256 && \
+    wget https://ftp.mozilla.org/pub/firefox/releases/74.0/linux-x86_64/en-US/firefox-74.0.tar.bz2 && \
+    echo 09d430f7141d0bb753f9f3faed91648196af6a86f30ae4d62f27f6f9e27f2f5f firefox-74.0.tar.bz2 > firefox-74.0.tar.bz2.sha256 && \
+    sha256sum --check firefox-74.0.tar.bz2.sha256 && \
     mkdir /opt/firefox && \
-    tar -xjf firefox-60.0.1.tar.bz2 -C /opt/firefox/ && \
+    tar -xjf firefox-74.0.tar.bz2 -C /opt/firefox/ && \
     sudo ln -s /opt/firefox/firefox/firefox /usr/bin/firefox && \
-    rm firefox-60.0.1.tar.bz2 && \
+    rm firefox-74.0.tar.bz2 && \
     wget https://github.com/sass/dart-sass/releases/download/1.16.0/dart-sass-1.16.0-linux-x64.tar.gz && \
     echo 4a2c37fad16ac4cbdd6d9e460118bd2e5c3288f0119c032493903b4b5ad987da dart-sass-1.16.0-linux-x64.tar.gz > dart-sass-1.16.0-linux-x64.tar.gz.sha256 && \
     sha256sum --check dart-sass-1.16.0-linux-x64.tar.gz.sha256 && \
