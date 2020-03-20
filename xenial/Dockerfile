@@ -30,7 +30,7 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     sudo ln -s /opt/phantomjs/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs && \
     rm phantomjs-2.1.1-linux-x86_64.tar.bz2 phantomjs-2.1.1-linux-x86_64.tar.bz2.sha256 && \
     wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz && \
-    echo 9aa273e59358e4c40f34d74bb771726a110fd8c81eb628b3305c22f1146dfe75 geckodriver-v0.24.0-linux64.tar.gz > gecko.sha256 && \
+    echo 03be3d3b16b57e0f3e7e8ba7c1e4bf090620c147e6804f6c6f3203864f5e3784 geckodriver-v0.24.0-linux64.tar.gz > gecko.sha256 && \
     sha256sum --check gecko.sha256 && \
     mkdir /opt/geckodriver && \
     tar -xf geckodriver-v0.24.0-linux64.tar.gz -C /opt/geckodriver/ && \
