@@ -36,13 +36,11 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     tar -xf geckodriver-v0.24.0-linux64.tar.gz -C /opt/geckodriver/ && \
     sudo ln -s /opt/geckodriver/geckodriver /usr/bin/geckodriver && \
     rm geckodriver-v0.24.0-linux64.tar.gz gecko.sha256 && \
-    wget https://ftp.mozilla.org/pub/firefox/releases/74.0/linux-x86_64/en-US/firefox-74.0.tar.bz2 && \
-    echo 09d430f7141d0bb753f9f3faed91648196af6a86f30ae4d62f27f6f9e27f2f5f firefox-74.0.tar.bz2 > firefox-74.0.tar.bz2.sha256 && \
-    sha256sum --check firefox-74.0.tar.bz2.sha256 && \
+    wget https://ftp.mozilla.org/pub/firefox/releases/69.0.3/linux-x86_64/en-US/firefox-69.0.3.tar.bz2 && \
     mkdir /opt/firefox && \
-    tar -xjf firefox-74.0.tar.bz2 -C /opt/firefox/ && \
+    tar -xjf firefox-69.0.3.tar.bz2 -C /opt/firefox/ && \
     sudo ln -s /opt/firefox/firefox/firefox /usr/bin/firefox && \
-    rm firefox-74.0.tar.bz2 && \
+    rm firefox-69.0.3.tar.bz2 && \
     wget https://github.com/sass/dart-sass/releases/download/1.16.0/dart-sass-1.16.0-linux-x64.tar.gz && \
     echo 4a2c37fad16ac4cbdd6d9e460118bd2e5c3288f0119c032493903b4b5ad987da dart-sass-1.16.0-linux-x64.tar.gz > dart-sass-1.16.0-linux-x64.tar.gz.sha256 && \
     sha256sum --check dart-sass-1.16.0-linux-x64.tar.gz.sha256 && \
