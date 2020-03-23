@@ -3,7 +3,7 @@ MAINTAINER Jemstep Dev <dev@jemstep.com>
 
 ENV TERM xterm-color
 ENV JAVA_VER 8
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /etc/apt/sources.list.d/webupd8team-ubuntu-java.list && \
     echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /etc/apt/sources.list.d/webupd8team-ubuntu-java-src.list && \
@@ -53,17 +53,10 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main' > /e
     rm dart-sass-1.16.0-linux-x64.tar.gz dart-sass-1.16.0-linux-x64.tar.gz.sha256 && \
     apt-add-repository -y ppa:git-core/ppa && \
     apt-get update && \
-    echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
-    apt-get install -y --allow-change-held-packages --no-install-recommends oracle-java${JAVA_VER}-installer oracle-java${JAVA_VER}-set-default oracle-java${JAVA_VER}-unlimited-jce-policy sbt git && \
+    apt-get install -y --allow-change-held-packages --no-install-recommends openjdk-${JAVA_VER}-jdk sbt git && \
     apt-mark hold firefox && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists && \
-    rm -rf /var/cache/oracle-jdk${JAVA_VER}-installer && \
-    rm -rf ${JAVA_HOME}/ct.sym && \
-    rm -rf ${JAVA_HOME}/src.zip && \
-    rm -rf ${JAVA_HOME}/javafx-src.zip && \
-    rm -rf ${JAVA_HOME}/lib/visualvm && \
-    rm -rf ${JAVA_HOME}/lib/missioncontrol
+    rm -rf /var/lib/apt/lists
 
 RUN locale-gen en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
